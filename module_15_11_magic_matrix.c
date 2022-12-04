@@ -1,0 +1,84 @@
+#include<stdio.h>
+int main()
+{
+    int i,j,arr[3][3],s,s1,s2,s3,flag=0;
+    for(i=0;i<3;i++)
+    {
+        for(j=0;j<3;j++)
+        {
+            scanf("%d",&arr[i][j]);
+        }
+    }
+    //primary diagonal
+    for(i=0;i<3;i++)
+    {
+        s=0;
+        for(j=0;j<3;j++)
+        {
+            if(i==j)
+            {
+                s+=arr[i][j];
+            }
+        }
+    }
+    //secondary diagonal
+    for(i=0;i<3;i++)
+    {
+        s1=0;
+        for(j=0;j<3;j++)
+        {
+            if(i+j==4)
+            {
+                s1+=arr[i][j];
+            }
+        }
+        if(s==s1)
+        {
+            flag=1;
+        }
+        else{
+            flag=0;
+        }
+    }
+    //rows
+    for(i=0;i<3;i++)
+    {
+        s2=0;
+        for(j=0;j<3;j++)
+        {
+            s2+=arr[i][j];
+        }
+        if(s==s2)
+        {
+            flag=1;
+        }
+        else{
+            flag=0;
+        }
+    }
+    //columns
+    for(i=0;i<3;i++)
+    {
+        s3=0;
+        for(j=0;j<3;j++)
+        {
+            s3+=arr[i][j];
+        }
+        if(s==s3)
+        {
+            flag=1;
+        }
+        else{
+            flag=0;
+        }
+    }
+
+    if(flag==1)
+    {
+        printf("Yes\n");
+    }
+    else{
+        printf("No\n");
+    }
+
+}
